@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const LetterList = ({ letters, selectedTab }) => {
     const filteredLetters = selectedTab
@@ -10,8 +11,10 @@ const LetterList = ({ letters, selectedTab }) => {
             <ul>
                 {filteredLetters.map((letter, index) => (
                     <li key={index}>
-                        <strong>{letter.name}</strong> ({letter.recipient}):{" "}
-                        {letter.content}
+                        <Link to={`/letters/${letter.name}`}>
+                            <strong>{letter.name}</strong> ({letter.recipient}):{" "}
+                            {letter.content}
+                        </Link>
                     </li>
                 ))}
             </ul>
