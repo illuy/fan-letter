@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const LetterForm = () => {
+const LetterForm = ({ addLetter }) => {
     const [name, setName] = useState("");
     const [content, setContent] = useState("");
     const [recipient, setRecipient] = useState("");
@@ -16,10 +16,21 @@ const LetterForm = () => {
     };
     const HandleSubmit = (e) => {
         e.preventDefault();
-        // 여기에서 입력값 활용 또는 상위 컴포넌트로 전달할 수 있습니다.
-        console.log("Name:", name);
-        console.log("Content:", content);
-        console.log("Recipient:", recipient);
+
+        // 새로운 편지 객체 생성
+        const newLetter = {
+            name: name,
+            content: content,
+            recipient: recipient,
+        };
+
+        // 부모 컴포넌트로 새로운 편지 전달
+        addLetter(newLetter);
+
+        // 입력값 초기화
+        setName("");
+        setContent("");
+        setRecipient("");
     };
 
     return (
