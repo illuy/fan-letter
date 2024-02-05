@@ -9,8 +9,8 @@ function App() {
             <div>
                 <Header></Header>
                 <Menu></Menu>
-                <LetterForm></LetterForm>
-                <LetterList></LetterList>
+                <LetterForm />
+                <LetterList />
             </div>
         </>
     );
