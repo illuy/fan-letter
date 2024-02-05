@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const LetterForm = ({ addLetter }) => {
     const [name, setName] = useState("");
     const [content, setContent] = useState("");
-    const [recipient, setRecipient] = useState("");
+    const [recipient, setRecipient] = useState("Karina"); // 초기값을 'Karina'로 설정
 
     const HandleNameChange = (e) => {
         setName(e.target.value);

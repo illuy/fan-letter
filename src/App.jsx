@@ -6,6 +6,7 @@ import LetterList from "./components/Letter/LetterList";
 
 function App() {
     const [letters, setLetters] = useState([]);
+    const [selectedTab, setSelectedTab] = useState("Karina"); // 초기값을 'Karina'로 설정
 
     const addLetter = (newLetter) => {
         setLetters([...letters, newLetter]);
@@ -19,9 +20,9 @@ function App() {
     return (
         <>
             <Header></Header>
-            <Menu></Menu>
+            <Menu setSelectedTab={setSelectedTab} />
             <LetterForm addLetter={addLetter} />
-            <LetterList letters={letters} />
+            <LetterList letters={letters} selectedTab={selectedTab} />
         </>
     );
 }
