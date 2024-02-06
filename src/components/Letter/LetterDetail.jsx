@@ -25,9 +25,9 @@ const LetterDetail = ({ letters, updateLetter, deleteLetter }) => {
         return <div>편지를 찾을 수 없습니다.</div>;
     }
 
-    const handleGoBack = () => {
-        navigate("/");
-    };
+    // const handleGoBack = () => {
+    //     navigate("/");
+    // };
 
     const handleEdit = () => {
         setEditing(true);
@@ -55,7 +55,8 @@ const LetterDetail = ({ letters, updateLetter, deleteLetter }) => {
                 <p>내용: {selectedLetter.content}</p>
             )}
             <p>받는 사람: {selectedLetter.recipient}</p>
-
+            <p>작성 시간: {selectedLetter.time.toLocaleString()}</p>{" "}
+            {/* 작성 시간 추가 */}
             {editing ? (
                 <button onClick={handleSave}>저장</button>
             ) : (
