@@ -7,10 +7,26 @@ const Menu = ({ setSelectedTab }) => {
     return (
         <nav>
             <ul>
-                <li onClick={() => handleTabClick("Karina")}>Karina</li>
-                <li onClick={() => handleTabClick("Winter")}>Winter</li>
-                <li onClick={() => handleTabClick("Giselle")}>Giselle</li>
-                <li onClick={() => handleTabClick("Ningning")}>Ningning</li>
+                <li>
+                    <button onClick={() => handleTabClick("Karina")}>
+                        Karina
+                    </button>
+                </li>
+                <li>
+                    <button onClick={() => handleTabClick("Winter")}>
+                        Winter
+                    </button>
+                </li>
+                <li>
+                    <button onClick={() => handleTabClick("Giselle")}>
+                        Giselle
+                    </button>
+                </li>
+                <li>
+                    <button onClick={() => handleTabClick("Ningning")}>
+                        Ningning
+                    </button>
+                </li>
             </ul>
         </nav>
     );
