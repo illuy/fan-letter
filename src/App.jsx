@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import GlobalStyle from "./shared/GlobalStyle";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import LetterForm from "./components/Letter/LetterForm";
@@ -34,6 +35,7 @@ function App() {
 
     return (
         <Router>
+            <GlobalStyle />
             <Routes>
                 <Route
                     path="/"
