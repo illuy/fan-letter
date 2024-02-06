@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 const LetterForm = ({ addLetter }) => {
     const [name, setName] = useState("");
@@ -38,26 +39,26 @@ const LetterForm = ({ addLetter }) => {
     };
 
     return (
-        <form onSubmit={HandleSubmit}>
-            <div>
-                <label htmlFor="name">이름:</label>
+        <FormWrap onSubmit={HandleSubmit}>
+            <FormCont>
+                <FormContLabel htmlFor="name">닉네임:</FormContLabel>
                 <input
                     type="text"
                     id="name"
                     value={name}
                     onChange={handleChange}
                 />
-            </div>
-            <div>
-                <label htmlFor="content">내용:</label>
+            </FormCont>
+            <FormCont>
+                <FormContLabel htmlFor="content">내용:</FormContLabel>
                 <textarea
                     id="content"
                     value={content}
                     onChange={handleChange}
                 />
-            </div>
-            <div>
-                <label htmlFor="recipient">누구에게 보낼지:</label>
+            </FormCont>
+            <FormCont>
+                <FormContLabel htmlFor="recipient">To:</FormContLabel>
                 <select
                     id="recipient"
                     value={recipient}
@@ -68,10 +69,46 @@ const LetterForm = ({ addLetter }) => {
                     <option value="Giselle">Giselle</option>
                     <option value="Ningning">Ningning</option>
                 </select>
-            </div>
-            <button type="submit">글 작성</button>
-        </form>
+            </FormCont>
+            <FormBtn type="submit">글 작성</FormBtn>
+        </FormWrap>
     );
 };
 
 export default LetterForm;
+
+const FormWrap = styled.form`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #212121cc;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 400px;
+    margin: 0 auto;
+    color: #fff;
+`;
+const FormCont = styled.div`
+    display: flex;
+    margin-bottom: 1rem;
+    width: 100%;
+`;
+const FormContLabel = styled.label`
+    width: 4rem;
+    text-align: justify;
+    & + input {
+        width: calc(100% - 4rem);
+    }
+    & + textarea {
+        width: calc(100% - 4rem);
+        height: 4rem;
+    }
+    & + select {
+        width: calc(100% - 4rem);
+    }
+`;
+
+const FormBtn = styled.button`
+    align-self: self-end;
+`;
