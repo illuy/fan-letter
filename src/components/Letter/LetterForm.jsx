@@ -17,11 +17,14 @@ const LetterForm = ({ addLetter }) => {
     const HandleSubmit = (e) => {
         e.preventDefault();
 
+        const currentTime = new Date();
+
         // 새로운 편지 객체 생성
         const newLetter = {
             name: name,
             content: content,
             recipient: recipient,
+            time: currentTime, // 현재 시간 추가
         };
 
         // 부모 컴포넌트로 새로운 편지 전달
