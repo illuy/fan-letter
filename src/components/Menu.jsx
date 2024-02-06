@@ -44,7 +44,7 @@ export default Menu;
 const MenuWrap = styled.nav`
     display: flex;
     justify-content: center;
-    margin: 2rem;
+    margin: 1rem;
 `;
 const MenuWrapBox = styled.ul`
     display: flex;
