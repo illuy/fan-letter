@@ -8,16 +8,23 @@ const LetterList = ({ letters, selectedTab }) => {
         : letters;
     return (
         <ListWrap>
-            <h2>펜레터 목록</h2>
+            <h2>팬레터 목록</h2>
             <ul>
                 {filteredLetters.map((letter, index) => (
-                    <li key={index}>
+                    <ListItem key={index}>
                         <Link to={`/letters/${letter.name}`}>
-                            <strong>{letter.name}</strong> ({letter.recipient}):{" "}
-                            {letter.content} - {letter.time.toLocaleString()}{" "}
+                            <ListItemImg />
+                            <div>
+                                <ListItemNic>{letter.name}</ListItemNic>
+                                <ListItemTime>
+                                    {letter.time.toLocaleString()}
+                                </ListItemTime>
+                                <ListItemCont>{letter.content}</ListItemCont>
+                            </div>
+
                             {/* 시간 추가 */}
                         </Link>
-                    </li>
+                    </ListItem>
                 ))}
             </ul>
         </ListWrap>
@@ -29,4 +36,71 @@ export default LetterList;
 const ListWrap = styled.section`
     margin: 0 auto;
     width: 400px;
+    & > h2 {
+        text-align: center;
+        margin-bottom: 1rem;
+        color: #fff;
+    }
+`;
+
+const ListItem = styled.li`
+    width: 100%;
+    background-color: #6b6b6bcc;
+    border-radius: 0.5rem;
+    color: #ddd;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    & > a {
+        display: flex;
+    }
+    & > a > div {
+        width: calc(100% - 6rem);
+    }
+    & > a > div > p {
+        margin-bottom: 0.5rem;
+    }
+`;
+const ListItemImg = styled.span`
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+    background-color: #ccc;
+    margin-right: 1rem;
+    overflow: hidden;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 2rem;
+        transform: translate(-50%, -80%);
+        background-color: #212121;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 4rem;
+        transform: translate(-50%, 55%);
+        background-color: #212121;
+    }
+`;
+const ListItemNic = styled.p`
+    color: #eee;
+    font-size: 1.4rem;
+`;
+const ListItemTime = styled.p`
+    font-size: 0.9rem;
+`;
+const ListItemCont = styled.p`
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 `;
