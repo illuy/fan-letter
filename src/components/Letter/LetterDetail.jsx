@@ -25,10 +25,6 @@ const LetterDetail = ({ letters, updateLetter, deleteLetter }) => {
         return <div>편지를 찾을 수 없습니다.</div>;
     }
 
-    // const handleGoBack = () => {
-    //     navigate("/");
-    // };
-
     const handleEdit = () => {
         setEditing(true);
     };

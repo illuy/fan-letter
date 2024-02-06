@@ -5,14 +5,15 @@ const LetterForm = ({ addLetter }) => {
     const [content, setContent] = useState("");
     const [recipient, setRecipient] = useState("Karina"); // 초기값을 'Karina'로 설정
 
-    const HandleNameChange = (e) => {
-        setName(e.target.value);
-    };
-    const HandleContentChange = (e) => {
-        setContent(e.target.value);
-    };
-    const HandleRecipientChange = (e) => {
-        setRecipient(e.target.value);
+    const handleChange = (e) => {
+        const { id, value } = e.target;
+        if (id === "name") {
+            setName(value);
+        } else if (id === "content") {
+            setContent(value);
+        } else if (id === "recipient") {
+            setRecipient(value);
+        }
     };
     const HandleSubmit = (e) => {
         e.preventDefault();
@@ -44,7 +45,7 @@ const LetterForm = ({ addLetter }) => {
                     type="text"
                     id="name"
                     value={name}
-                    onChange={HandleNameChange}
+                    onChange={handleChange}
                 />
             </div>
             <div>
@@ -52,7 +53,7 @@ const LetterForm = ({ addLetter }) => {
                 <textarea
                     id="content"
                     value={content}
-                    onChange={HandleContentChange}
+                    onChange={handleChange}
                 />
             </div>
             <div>
@@ -60,7 +61,7 @@ const LetterForm = ({ addLetter }) => {
                 <select
                     id="recipient"
                     value={recipient}
-                    onChange={HandleRecipientChange}
+                    onChange={handleChange}
                 >
                     <option value="Karina">Karina</option>
                     <option value="Winter">winter</option>
