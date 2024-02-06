@@ -44,17 +44,31 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-ul,ol{
-    list-style: none;
-}
-
 a{
     color:inherit;
     text-decoration: none;
 }
 *{
     box-sizing: border-box;
+}
+
+/* 백그라운드 */
+body{
+    background-color: #212121;
+}
+body::before{
+    content: '';
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.2;    
+    background-image: url(https://www.rollingstone.com/wp-content/uploads/2023/10/aespa-ep-announcement.jpg?w=1581&h=1054&crop=1);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
 }
 `;
 
