@@ -14,11 +14,19 @@ const TabList = ({ tabs, handleTabClick, activeTab }) => (
     </MenuWrapBox>
 );
 
-const Menu = () => {
+const TabItem = ({ tab, handleTabClick, isActive }) => (
+    <MenuWrapItem className={isActive ? "active" : ""}>
+        <MenuWrapBtn onClick={() => handleTabClick(tab)}>{tab}</MenuWrapBtn>
+    </MenuWrapItem>
+);
+
+const Menu = ({ setSelectedTab }) => {
     const [activeTab, setActiveTab] = useState("Karina");
 
     const handleTabClick = (tab) => {
+        console.log("Tab Clicked:", tab);
         setActiveTab(tab);
+        setSelectedTab(tab); // setSelectedTab을 호출하여 App 컴포넌트의 state를 변경
     };
 
     const tabs = ["Karina", "Winter", "Giselle", "Ningning"];
@@ -33,11 +41,6 @@ const Menu = () => {
         </MenuWrap>
     );
 };
-const TabItem = ({ tab, handleTabClick, isActive }) => (
-    <MenuWrapItem className={isActive ? "active" : ""}>
-        <MenuWrapBtn onClick={() => handleTabClick(tab)}>{tab}</MenuWrapBtn>
-    </MenuWrapItem>
-);
 
 export default Menu;
 

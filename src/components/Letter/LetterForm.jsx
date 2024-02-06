@@ -15,6 +15,7 @@ const LetterForm = ({ addLetter }) => {
         } else if (id === "recipient") {
             setRecipient(value);
         }
+        console.log("입력값 업데이트:", { name, content, recipient }); // 확인을 위한 로그 추가
     };
     const HandleSubmit = (e) => {
         e.preventDefault();
@@ -36,6 +37,8 @@ const LetterForm = ({ addLetter }) => {
         setName("");
         setContent("");
         setRecipient("");
+
+        console.log("글 작성 폼 제출:", newLetter); // 확인을 위한 로그 추가
     };
 
     return (
