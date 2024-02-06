@@ -49,7 +49,7 @@ const MenuWrap = styled.nav`
 const MenuWrapBox = styled.ul`
     display: flex;
     justify-content: center;
-    background-color: #212121;
+    background-color: #212121cc;
     border-radius: 0.5rem;
     padding: 1rem;
 `;
