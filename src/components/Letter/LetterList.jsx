@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const LetterList = ({ letters, selectedTab }) => {
     const filteredLetters = selectedTab
         ? letters.filter((letter) => letter.recipient === selectedTab)
         : letters;
     return (
-        <section>
+        <ListWrap>
             <h2>펜레터 목록</h2>
             <ul>
                 {filteredLetters.map((letter, index) => (
@@ -19,8 +20,13 @@ const LetterList = ({ letters, selectedTab }) => {
                     </li>
                 ))}
             </ul>
-        </section>
+        </ListWrap>
     );
 };
 
 export default LetterList;
+
+const ListWrap = styled.section`
+    margin: 0 auto;
+    width: 400px;
+`;

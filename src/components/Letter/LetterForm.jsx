@@ -88,6 +88,7 @@ const FormWrap = styled.form`
     width: 400px;
     margin: 0 auto;
     color: #fff;
+    margin-bottom: 1rem;
 `;
 const FormCont = styled.div`
     display: flex;
