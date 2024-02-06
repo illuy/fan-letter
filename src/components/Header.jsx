@@ -22,7 +22,11 @@ const HeaderWrap = styled.header`
     padding: 1rem;
     background-color: #212121;
     color: #fff;
+    position: relative;
 `;
 const Logo = styled.h1`
-    font-size: 2rem;
+    font-size: 1.8rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 `;
