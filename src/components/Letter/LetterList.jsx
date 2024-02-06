@@ -13,7 +13,8 @@ const LetterList = ({ letters, selectedTab }) => {
                     <li key={index}>
                         <Link to={`/letters/${letter.name}`}>
                             <strong>{letter.name}</strong> ({letter.recipient}):{" "}
-                            {letter.content}
+                            {letter.content} - {letter.time.toLocaleString()}{" "}
+                            {/* 시간 추가 */}
                         </Link>
                     </li>
                 ))}
