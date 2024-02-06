@@ -6,6 +6,8 @@ const LetterList = ({ letters, selectedTab }) => {
     const filteredLetters = selectedTab
         ? letters.filter((letter) => letter.recipient === selectedTab)
         : letters;
+
+    console.log("Filtered Letters:", filteredLetters);
     return (
         <ListWrap>
             <h2>팬레터 목록</h2>

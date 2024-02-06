@@ -13,6 +13,7 @@ function App() {
 
     const addLetter = (newLetter) => {
         setLetters([...letters, newLetter]);
+        setSelectedTab(newLetter.recipient); // 편지를 추가할 때, selectedTab 업데이트
     };
 
     const updateLetter = (name, content) => {
