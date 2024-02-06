@@ -11,24 +11,30 @@ const LetterList = ({ letters, selectedTab }) => {
     return (
         <ListWrap>
             <h2>팬레터 목록</h2>
-            <ul>
-                {filteredLetters.map((letter, index) => (
-                    <ListItem key={index}>
-                        <Link to={`/letters/${letter.name}`}>
-                            <ListItemImg />
-                            <div>
-                                <ListItemNic>{letter.name}</ListItemNic>
-                                <ListItemTime>
-                                    {letter.time.toLocaleString()}
-                                </ListItemTime>
-                                <ListItemCont>{letter.content}</ListItemCont>
-                            </div>
+            {filteredLetters.length === 0 ? (
+                <p>아직 등록된 펜레터가 없습니다.</p>
+            ) : (
+                <ul>
+                    {filteredLetters.map((letter, index) => (
+                        <ListItem key={index}>
+                            <Link to={`/letters/${letter.name}`}>
+                                <ListItemImg />
+                                <div>
+                                    <ListItemNic>{letter.name}</ListItemNic>
+                                    <ListItemTime>
+                                        {letter.time.toLocaleString()}
+                                    </ListItemTime>
+                                    <ListItemCont>
+                                        {letter.content}
+                                    </ListItemCont>
+                                </div>
 
-                            {/* 시간 추가 */}
-                        </Link>
-                    </ListItem>
-                ))}
-            </ul>
+                                {/* 시간 추가 */}
+                            </Link>
+                        </ListItem>
+                    ))}
+                </ul>
+            )}
         </ListWrap>
     );
 };
@@ -42,6 +48,13 @@ const ListWrap = styled.section`
         text-align: center;
         margin-bottom: 1rem;
         color: #fff;
+    }
+    & > p {
+        background-color: #212121cc;
+        color: #ccc;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        text-align: center;
     }
 `;
 
