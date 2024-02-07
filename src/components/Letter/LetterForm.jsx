@@ -5,6 +5,8 @@ const LetterForm = ({ addLetter }) => {
     const [name, setName] = useState("");
     const [content, setContent] = useState("");
     const [recipient, setRecipient] = useState("Karina"); // 초기값을 'Karina'로 설정
+    const [errorMessage, setErrorMessage] =
+        useState("닉네임과 내용을 입력해주세요.");
 
     const handleChange = (e) => {
         const { id, value } = e.target;
@@ -19,6 +21,13 @@ const LetterForm = ({ addLetter }) => {
     };
     const HandleSubmit = (e) => {
         e.preventDefault();
+
+        // 입력값이 비어있는 경우 얼랏 창을 통해 경고 메시지 표시
+        if (!name.trim() || !content.trim()) {
+            setErrorMessage("닉네임과 내용을 입력해주세요.");
+            alert(errorMessage);
+            return;
+        }
 
         const currentTime = new Date();
 
