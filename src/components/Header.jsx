@@ -20,7 +20,7 @@ const HeaderWrap = styled.header`
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: #212121;
+    background-color: #151515;
     color: #fff;
     position: relative;
 `;

@@ -50,7 +50,7 @@ const ListWrap = styled.section`
         color: #fff;
     }
     & > p {
-        background-color: #212121cc;
+        background-color: #151515cc;
         color: #ccc;
         padding: 1rem;
         border-radius: 0.5rem;

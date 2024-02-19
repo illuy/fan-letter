@@ -115,7 +115,7 @@ const DetailSectionCont = styled.div`
     border-radius: 1rem;
     padding: 1rem;
     background-color: #eee;
-    color: #212121;
+    color: #151515;
 `;
 
 const DetailSectionContHeader = styled.div`
@@ -150,7 +150,7 @@ const ListItemImg = styled.span`
         height: 1.2rem;
         border-radius: 1.2rem;
         transform: translate(-50%, -80%);
-        background-color: #212121;
+        background-color: #151515;
     }
     &::after {
         content: "";
@@ -161,7 +161,7 @@ const ListItemImg = styled.span`
         height: 3rem;
         border-radius: 3rem;
         transform: translate(-50%, 65%);
-        background-color: #212121;
+        background-color: #151515;
     }
 `;
 const DetailSectionContTo = styled.p`
@@ -171,7 +171,7 @@ const DetailSectionContContent = styled.p`
     margin-bottom: 1rem;
     padding: 1rem;
     border-radius: 0.8rem;
-    background-color: #212121;
+    background-color: #151515;
     color: #ddd;
     line-height: 1.8rem;
 `;

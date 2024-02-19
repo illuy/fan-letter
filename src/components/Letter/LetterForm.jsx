@@ -94,7 +94,7 @@ const FormWrap = styled.form`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background-color: #212121cc;
+    background-color: #151515cc;
     padding: 1rem;
     border-radius: 0.5rem;
     width: 400px;
