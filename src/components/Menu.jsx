@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useLetterContext } from "../context/LetterContext";
 
 const TabList = ({ tabs, handleTabClick, activeTab }) => (
     <MenuWrapBox>
@@ -20,12 +21,11 @@ const TabItem = ({ tab, handleTabClick, isActive }) => (
     </MenuWrapItem>
 );
 
-const Menu = ({ setSelectedTab }) => {
-    const [activeTab, setActiveTab] = useState("Karina");
+const Menu = () => {
+    const { selectedTab, setSelectedTab } = useLetterContext(); // 선택된 탭과 setSelectedTab 가져오기
 
     const handleTabClick = (tab) => {
         console.log("Tab Clicked:", tab);
-        setActiveTab(tab);
         setSelectedTab(tab); // setSelectedTab을 호출하여 App 컴포넌트의 state를 변경
     };
 
@@ -36,7 +36,7 @@ const Menu = ({ setSelectedTab }) => {
             <TabList
                 tabs={tabs}
                 handleTabClick={handleTabClick}
-                activeTab={activeTab}
+                activeTab={selectedTab}
             />
         </MenuWrap>
     );
