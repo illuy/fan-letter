@@ -4,9 +4,10 @@ import styled from "styled-components";
 const LetterForm = ({ addLetter }) => {
     const [name, setName] = useState("");
     const [content, setContent] = useState("");
-    const [recipient, setRecipient] = useState("Karina"); // 초기값을 'Karina'로 설정
-    const [errorMessage, setErrorMessage] =
-        useState("닉네임과 내용을 입력해주세요.");
+    const [recipient, setRecipient] = useState("Select recipient"); // 초기값을 'Select recipient'로 설정
+    const [errorMessage, setErrorMessage] = useState(
+        "닉네임과 내용, 누구에게 보낼지 입력해주세요."
+    );
 
     const handleChange = (e) => {
         const { id, value } = e.target;
@@ -23,8 +24,12 @@ const LetterForm = ({ addLetter }) => {
         e.preventDefault();
 
         // 입력값이 비어있는 경우 얼랏 창을 통해 경고 메시지 표시
-        if (!name.trim() || !content.trim()) {
-            setErrorMessage("닉네임과 내용을 입력해주세요.");
+        if (
+            !name.trim() ||
+            !content.trim() ||
+            recipient === "Select recipient"
+        ) {
+            setErrorMessage("닉네임과 내용, 누구에게 보낼지 입력해주세요.");
             alert(errorMessage);
             return;
         }
@@ -45,7 +50,7 @@ const LetterForm = ({ addLetter }) => {
         // 입력값 초기화
         setName("");
         setContent("");
-        setRecipient("");
+        setRecipient("Select recipient"); // 여기서 기본값을 설정
 
         console.log("글 작성 폼 제출:", newLetter); // 확인을 위한 로그 추가
     };
@@ -76,6 +81,7 @@ const LetterForm = ({ addLetter }) => {
                     value={recipient}
                     onChange={handleChange}
                 >
+                    <option value="Select recipient">Letter to whom?</option>
                     <option value="Karina">Karina</option>
                     <option value="Winter">winter</option>
                     <option value="Giselle">Giselle</option>

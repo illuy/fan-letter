@@ -37,6 +37,7 @@ export const LetterProvider = ({ children }) => {
                 addLetter,
                 updateLetter,
                 deleteLetter,
+                setSelectedTab,
             }}
         >
             {children}
