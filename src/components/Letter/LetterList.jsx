@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useLetterContext } from "../../context/LetterContext";
 
-const LetterList = ({ letters, selectedTab }) => {
+const LetterList = ({ selectedTab }) => {
+    const { letters } = useLetterContext();
     const filteredLetters = selectedTab
         ? letters.filter((letter) => letter.recipient === selectedTab)
         : letters;
